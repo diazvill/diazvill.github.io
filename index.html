@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My GIS Portfolio</title>
+  <title>Laura Diaz-Villaqiran GIS Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -9,7 +9,7 @@
       margin: 20px auto;
       padding: 0 20px;
     }
-    h1 {
+    h1, h2 {
       text-align: center;
     }
     .portfolio-grid {
@@ -33,12 +33,74 @@
       transform: scale(1.05);
       cursor: pointer;
     }
+    .interactive-project {
+      margin: 40px 0;
+    }
   </style>
 </head>
 
 <body>
   <h1>My GIS Portfolio</h1>
   <p style="text-align:center;">Click a project below to explore my work.</p>
+
+  <h2>Interactive Projects</h2>
+
+  <div class="interactive-project">
+    <h3>Energy Burden in Mississippi</h3>
+    <iframe 
+        title="Energy Burden in Mississippi" 
+        aria-label="Choropleth map" 
+        id="datawrapper-chart-lZFST" 
+        src="https://datawrapper.dwcdn.net/lZFST/4/" 
+        scrolling="no" 
+        frameborder="0" 
+        style="width: 100%; border: none;" 
+        height="563" 
+        data-external="1">
+    </iframe>
+    <script type="text/javascript">
+      window.addEventListener("message", function(a){
+        if (a.data["datawrapper-height"] !== undefined) {
+          var e = document.querySelectorAll("iframe");
+          for (var t in a.data["datawrapper-height"])
+            for (var r,i=0;r=e[i];i++)
+              if (r.contentWindow === a.source){
+                r.style.height = a.data["datawrapper-height"][t] + "px";
+              }
+        }
+      });
+    </script>
+  </div>
+
+  <div class="interactive-project">
+    <h3>LMI Energy Burden in Tribal Nations</h3>
+    <iframe 
+        title="LMI Energy Burden in Tribal Nations"
+        aria-label="Map" 
+        id="datawrapper-chart-UjQCX" 
+        src="https://datawrapper.dwcdn.net/UjQCX/6/" 
+        scrolling="no" 
+        frameborder="0" 
+        style="width: 100%; border: none;" 
+        height="482" 
+        data-external="1">
+    </iframe>
+    <script type="text/javascript">
+      !function(){"use strict";
+      window.addEventListener("message",function(a){
+        if(a.data["datawrapper-height"]!==undefined){
+          var e=document.querySelectorAll("iframe");
+          for(var t in a.data["datawrapper-height"])
+            for(var r=0;r<e.length;r++)
+              if(e[r].contentWindow===a.source){
+                e[r].style.height = a.data["datawrapper-height"][t]+"px";
+              }
+        }
+      })}();
+    </script>
+  </div>
+
+  <h2>Static Projects</h2>
 
   <div class="portfolio-grid">
 
@@ -62,15 +124,6 @@
         <img src="MEMPHIS_TN_TC_REDLINED.png" alt="Map of redlined areas in Memphis, TN">
       </a>
     </div>
-
-    <div class="portfolio-item">
-      <h3>Virginia Public EV Chargers</h3>
-      <a href="VA_EV_Charge.png">
-        <img src="VA_EV_Charge.png" alt="Map of public EV charging stations in Virginia">
-      </a>
-    </div>
-
-  </div>
 
 </body>
 </html>
