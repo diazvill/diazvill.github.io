@@ -1,31 +1,76 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Laura Diaz-Villaquiran Portfolio</title>
+  <title>My GIS Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .portfolio-item {
+      text-align: center;
+      width: 250px;
+    }
+    .portfolio-item img {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .portfolio-item img:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
-<p>Click a project below to explore my work.</p>
+  <h1>My GIS Portfolio</h1>
+  <p style="text-align:center;">Click a project below to explore my work.</p>
 
-<h2>Projects</h2>
+  <div class="portfolio-grid">
 
-<a href="Median Housing Age U.S.A 2024 ACS.png">
-<img src="Median Housing Age U.S.A 2024 ACS.png" width="250">
-</a>
+    <div class="portfolio-item">
+      <h3>Median Housing Age (USA 2024 ACS)</h3>
+      <a href="Median Housing Age U.S.A 2024 ACS.png">
+        <img src="Median Housing Age U.S.A 2024 ACS.png" alt="Map showing median housing age in the USA, 2024 ACS">
+      </a>
+    </div>
 
-<a href="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png">
-<img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png" width="250">
-</a>
+    <div class="portfolio-item">
+      <h3>Increased Heat & Mobile Homes</h3>
+      <a href="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png">
+        <img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png" alt="Map showing increased heat areas and mobile homes">
+      </a>
+    </div>
 
-<a href="MEMPHIS_TN_TC_REDLINED.png">
-<img src="MEMPHIS_TN_TC_REDLINED.png" width="250">
-</a>
+    <div class="portfolio-item">
+      <h3>Memphis Redlined Areas</h3>
+      <a href="MEMPHIS_TN_TC_REDLINED.png">
+        <img src="MEMPHIS_TN_TC_REDLINED.png" alt="Map of redlined areas in Memphis, TN">
+      </a>
+    </div>
 
-<a href="VA_EV_Charge.png">
-<img src="VA_EV_Charge.png" width="250">
-</a>
+    <div class="portfolio-item">
+      <h3>Virginia Public EV Chargers</h3>
+      <a href="VA_EV_Charge.png">
+        <img src="VA_EV_Charge.png" alt="Map of public EV charging stations in Virginia">
+      </a>
+    </div>
+
+  </div>
 
 </body>
-
 </html>
