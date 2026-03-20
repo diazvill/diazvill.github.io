@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Laura Diaz-Villaquiran GIS Portfolio</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -9,9 +11,33 @@
       margin: 20px auto;
       padding: 0 20px;
     }
+
     h1, h2 {
       text-align: center;
     }
+
+    /* NAV (optional for later) */
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* INTERACTIVE PROJECT */
+    .interactive-project {
+      margin: 50px 0;
+      text-align: center;
+    }
+
+    .project-description {
+      max-width: 700px;
+      margin: 15px auto;
+      font-size: 16px;   /* ✅ BIGGER TEXT */
+      color: #444;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* STATIC PROJECTS */
     .portfolio-grid {
       display: flex;
       flex-wrap: wrap;
@@ -19,26 +45,34 @@
       justify-content: center;
       margin-top: 20px;
     }
+
     .portfolio-item {
       text-align: center;
-      flex: 1 1 250px; /* makes grid responsive */
+      flex: 1 1 250px;
       max-width: 250px;
     }
+
     .portfolio-item img {
       width: 100%;
       border: 1px solid #ccc;
       border-radius: 8px;
       transition: transform 0.2s;
     }
+
     .portfolio-item img:hover {
       transform: scale(1.05);
       cursor: pointer;
     }
-    .interactive-project {
-      margin: 40px 0;
-    }
+
   </style>
 </head>
+
+<body>
+
+  <h1>GIS Portfolio</h1>
+  <p style="text-align:center;">By Laura Diaz-Villaquiran</p>
+
+  <h2>Interactive Projects</h2>
 
 <div class="interactive-project">
 
