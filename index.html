@@ -12,17 +12,11 @@
       padding: 0 20px;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       text-align: center;
     }
 
-    /* NAV (optional for later) */
-    nav {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    /* INTERACTIVE PROJECT */
+    /* INTERACTIVE PROJECTS */
     .interactive-project {
       margin: 50px 0;
       text-align: center;
@@ -31,37 +25,64 @@
     .project-description {
       max-width: 700px;
       margin: 15px auto;
-      font-size: 16px;   /* ✅ BIGGER TEXT */
+      font-size: 16px;
       color: #444;
       line-height: 1.6;
       text-align: center;
     }
 
-    /* STATIC PROJECTS */
+    iframe {
+      border-radius: 8px;
+    }
+
+    /* SECTION TEXT */
+    .section-description {
+      max-width: 750px;
+      margin: 10px auto 30px;
+      text-align: center;
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* GRID */
     .portfolio-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
       justify-content: center;
-      margin-top: 20px;
+      margin-bottom: 40px;
     }
 
+    /* CARD STYLE */
     .portfolio-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      max-width: 260px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
       text-align: center;
-      flex: 1 1 250px;
-      max-width: 250px;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
 
     .portfolio-item img {
       width: 100%;
-      border: 1px solid #ccc;
       border-radius: 8px;
-      transition: transform 0.2s;
+      margin-top: 10px;
     }
 
-    .portfolio-item img:hover {
-      transform: scale(1.05);
-      cursor: pointer;
+    .portfolio-item h4 {
+      margin: 10px 0 5px;
+    }
+
+    .portfolio-item p {
+      font-size: 14px;
+      color: #555;
     }
 
   </style>
@@ -70,112 +91,138 @@
 <body>
 
   <h1>GIS Portfolio</h1>
+
+  <!-- EDIT NAME IF NEEDED -->
   <p style="text-align:center;">By Laura Diaz-Villaquiran</p>
 
+  <!-- ===================== -->
+  <!-- INTERACTIVE PROJECTS -->
+  <!-- ===================== -->
   <h2>Interactive Projects</h2>
 
-<div class="interactive-project">
-
-  <h3>LMI Energy Burden in Tribal Nations</h3>
-
-  <iframe 
-    title="LMI Energy Burden in Tribal Nations"
-    aria-label="Map" 
-    id="datawrapper-chart-UjQCX" 
-    src="https://datawrapper.dwcdn.net/UjQCX/6/" 
-    scrolling="no" 
-    frameborder="0" 
-    style="width: 100%; border: none;" 
-    height="482" 
-    data-external="1">
-  </iframe>
-
-  <p class="project-description">
-    Energy burdens faced by low- and moderate income (LMI) American Indian, Alaska Native, and Native Hawaiian households. The highest burdens are concentrated in Alaska due to high energy consumption, reliance on diesel generators, and limited grid connectivity. Many rural communities face high utility costs, reflecting broader patterns shaped by colonization, displacement, and systemic inequality.
-  </p>
-
-</div>
-
+  <!-- PROJECT 1 -->
   <div class="interactive-project">
+
+    <h3>LMI Energy Burden in Tribal Nations</h3>
+
     <iframe 
-        title="Energy Burden in Mississippi" 
-        aria-label="Choropleth map" 
-        id="datawrapper-chart-lZFST" 
-        src="https://datawrapper.dwcdn.net/lZFST/4/" 
-        scrolling="no" 
-        frameborder="0" 
-        style="width: 100%; border: none;" 
-        height="563" 
-        data-external="1">
+      src="https://datawrapper.dwcdn.net/UjQCX/6/" 
+      style="width: 100%; border: none;" 
+      height="482">
     </iframe>
-    <script type="text/javascript">
-      window.addEventListener("message", function(a){
-        if (a.data["datawrapper-height"] !== undefined) {
-          var e = document.querySelectorAll("iframe");
-          for (var t in a.data["datawrapper-height"])
-            for (var r,i=0;r=e[i];i++)
-              if (r.contentWindow === a.source){
-                r.style.height = a.data["datawrapper-height"][t] + "px";
-              }
-        }
-      });
-    </script>
+
+    <!-- EDIT DESCRIPTION -->
+    <p class="project-description">
+      Energy burdens faced by low- and moderate income (LMI) American Indian,
+      Alaska Native, and Native Hawaiian households. The highest burdens are
+      concentrated in Alaska due to high energy consumption, reliance on diesel
+      generators, and limited grid connectivity.
+    </p>
+
   </div>
-  
+
+  <!-- PROJECT 2 -->
+  <div class="interactive-project">
+
+    <h3>Energy Burden in Mississippi</h3>
+
+    <iframe 
+      src="https://datawrapper.dwcdn.net/lZFST/4/" 
+      style="width: 100%; border: none;" 
+      height="563">
+    </iframe>
+
+    <!-- EDIT DESCRIPTION -->
+    <p class="project-description">
+      This choropleth map shows county-level energy burden in Mississippi,
+      highlighting areas where households spend a higher share of income on energy.
+      It reveals regional disparities and identifies vulnerable communities.
+    </p>
+
+  </div>
+
+  <!-- ONE SCRIPT FOR ALL IFRAMES -->
+  <script>
+    window.addEventListener("message", function(a){
+      if (a.data["datawrapper-height"] !== undefined) {
+        var e = document.querySelectorAll("iframe");
+        for (var t in a.data["datawrapper-height"])
+          for (var r,i=0;r=e[i];i++)
+            if (r.contentWindow === a.source){
+              r.style.height = a.data["datawrapper-height"][t] + "px";
+            }
+      }
+    });
+  </script>
+
+  <!-- ===================== -->
+  <!-- STATIC PROJECTS -->
+  <!-- ===================== -->
   <h2>Static Projects</h2>
+
+  <!-- SECTION 1 -->
+  <h3>U.S. Housing & Environmental Inequality</h3>
+
+  <p class="section-description">
+    This group of maps examines housing age, vulnerability to extreme heat,
+    and disparities in tree canopy coverage across historically redlined
+    communities in the United States.
+  </p>
 
   <div class="portfolio-grid">
 
     <div class="portfolio-item">
-      <h3>Median Housing Age (USA 2024 ACS)</h3>
-      <a href="Median Housing Age U.S.A 2024 ACS.png">
-        <img src="Median Housing Age U.S.A 2024 ACS.png" alt="Map showing median housing age in the USA, 2024 ACS">
-      </a>
+      <h4>Median Housing Age (2024 ACS)</h4>
+      <p>Shows regional patterns in housing age across the U.S.</p>
+      <img src="Median Housing Age U.S.A 2024 ACS.png">
     </div>
 
     <div class="portfolio-item">
-      <h3>Increased Heat & Mobile Homes</h3>
-      <a href="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png">
-        <img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png" alt="Map showing increased heat areas and mobile homes">
-      </a>
+      <h4>Extreme Heat & Mobile Homes</h4>
+      <p>Highlights where mobile homes face higher exposure to extreme heat.</p>
+      <img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png">
     </div>
 
     <div class="portfolio-item">
-      <h3>Memphis, TN - Tree Canopy Cover in Redlined Areas</h3>
-      <a href="MEMPHIS_TN_TC_REDLINED.png">
-        <img src="MEMPHIS_TN_TC_REDLINED.png" alt="Map of redlined areas in Memphis, TN">
-      </a>
+      <h4>Memphis Tree Canopy & Redlining</h4>
+      <p>Reveals disparities in tree canopy across historically redlined areas.</p>
+      <img src="MEMPHIS_TN_TC_REDLINED.png">
     </div>
-    
-   <div class="portfolio-item">
-      <h3>The Brazilian Legal Amazon</h3>
-      <a href="Study_Area.jpg">
-        <img src="Study_Area.jpg" alt="Map of the Brazilian Legal Amazon">
-      </a>
-    </div>
-    
+
+  </div>
+
+  <!-- SECTION 2 -->
+  <h3>Master’s Capstone: Mining & Deforestation in the Brazilian Legal Amazon</h3>
+
+  <p class="section-description">
+    This project analyzes spatial relationships between mining activity and
+    deforestation using longitudinal PRODES raster data (2008–2022).
+  </p>
+
+  <div class="portfolio-grid">
+
     <div class="portfolio-item">
-      <h3>Indigenous Territories and Illegal Gold Mining</h3>
-      <a href="Indigenous_Territories.jpg">
-        <img src="Indigenous_Territories.jpg" alt="Indigenous Territories and Illegal Gold Mining">
-      </a>
+      <h4>Brazilian Legal Amazon</h4>
+      <img src="Study_Area.jpg">
     </div>
-    
+
     <div class="portfolio-item">
-      <h3>Roraima, Brazil - Digital Elevation Model</h3>
-      <a href="RORAIMA.png">
-        <img src="RORAIMA.png" alt="Roraima, Brazil -  Digital Elevation Model (DEM)">
-      </a>
+      <h4>Indigenous Territories & Mining</h4>
+      <img src="Indigenous_Territories.jpg">
     </div>
-    
-      <div class="portfolio-item">
-      <h3>Roads, Mining, and Deforestation in Roraima, Brazil</h3>
-      <a href="STUDY_BASIS.jpg">
-        <img src="STUDY_BASIS.jpg" alt="Roads, Mining, and Deforestation in Roraima, Brazil">
-      </a>
+
+    <div class="portfolio-item">
+      <h4>Roraima Digital Elevation Model</h4>
+      <img src="RORAIMA.png">
     </div>
-    
+
+    <div class="portfolio-item">
+      <h4>Deforestation, Roads & Mining</h4>
+      <img src="STUDY_BASIS.jpg">
+    </div>
+
   </div>
 
 </body>
+
 </html>
