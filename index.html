@@ -5,8 +5,9 @@
   <title>Laura Diaz-Villaquiran GIS Portfolio</title>
 
   <style>
+    /* Body & Font */
     body {
-      font-family: Arial, sans-serif;
+      font-family: Helvetica, Arial, sans-serif;
       max-width: 1100px;
       margin: 20px auto;
       padding: 0 20px;
@@ -22,7 +23,7 @@
       margin-top: 60px;
     }
 
-    /* TEXT */
+    /* Section & Project Text */
     .section-description, .project-description {
       max-width: 750px;
       margin: 10px auto 30px;
@@ -32,7 +33,7 @@
       line-height: 1.6;
     }
 
-    /* GRID */
+    /* Portfolio Grid */
     .portfolio-grid {
       display: flex;
       flex-wrap: wrap;
@@ -41,7 +42,7 @@
       margin-bottom: 40px;
     }
 
-    /* CARD */
+    /* Portfolio Cards */
     .portfolio-item {
       background: #ffffff;
       border-radius: 12px;
@@ -63,7 +64,7 @@
       transform: scale(1.05);
     }
 
-    /* LIGHTBOX */
+    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
@@ -87,7 +88,36 @@
       display: block;
     }
 
-    /* INTERACTIVE SIDE-BY-SIDE */
+    /* Capstone Big Centered Images */
+    .capstone-title {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .capstone-images {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .capstone-img {
+      max-width: 90%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .capstone-img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Interactive Projects */
     .interactive-container {
       display: flex;
       flex-wrap: wrap;
@@ -108,20 +138,26 @@
       background: #ffffff;
     }
 
-    /* CV BUTTON */
+    /* CV Button Lilac */
     .cv-button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #C8A2C8; /* lilac */
-  color: #222;
-  text-decoration: none;
-  border-radius: 6px;
-}
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #C8A2C8;
+      color: #222;
+      text-decoration: none;
+      border-radius: 6px;
+    }
 
-.cv-button:hover {
-  background: #B57EDC; /* slightly darker lilac */
-}
+    .cv-button:hover {
+      background: #B57EDC;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .capstone-title { font-size: 1.5em; }
+      .interactive-project { flex: 1 1 100%; max-width: 100%; }
+    }
   </style>
 </head>
 
@@ -132,149 +168,84 @@
 
   <!-- ABOUT -->
   <h2>About Me</h2>
-
   <div class="section-description">
     <p>
-      I am a GIS analyst focused on environmental justice, energy equity,
-      and spatial data storytelling. My work combines geospatial analysis,
-      data visualization, and policy-relevant research.
-
+      I am a GIS analyst focused on environmental justice, energy equity, and spatial data storytelling.
+      My work combines geospatial analysis, data visualization, and policy-relevant research.
+      <br>
       Soy analista SIG. Mi trabajo combina análisis geoespacial, 
       visualización de datos e investigación relevante para políticas públicas.
     </p>
-
     <a href="LMDV_CV_2026_06.pdf" download class="cv-button">
       Download CV
     </a>
   </div>
 
   <!-- STATIC PROJECTS -->
-    <!-- CAPSTONE -->
-    <h3>Master’s Capstone: Illegal Gold Mining & Deforestation in the Brazilian Legal Amazon</h3>
-    <div class="portfolio-item">
-      <h4>The Brazilian Legal Amazon</h4>
-      <a href="#cap1">
-        <img src="Study_Area.jpg">
-      </a>
-    </div>
-
-    <div id="cap1" class="lightbox">
-      <a href="#"><img src="Study_Area.jpg"></a>
-    </div>
-
-    <div class="portfolio-item">
-      <h4>Indigenous Territories & Mining</h4>
-      <a href="#cap2">
-        <img src="Indigenous_Territories.jpg">
-      </a>
-    </div>
-
-    <div id="cap2" class="lightbox">
-      <a href="#"><img src="Indigenous_Territories.jpg"></a>
-    </div>
-
-    <div class="portfolio-item">
-      <h4>Roraima DEM</h4>
-      <a href="#cap3">
-        <img src="RORAIMA.png">
-      </a>
-    </div>
-
-    <div id="cap3" class="lightbox">
-      <a href="#"><img src="RORAIMA.png"></a>
-    </div>
-
-    <div class="portfolio-item">
-      <h4>Deforestation & Mining</h4>
-      <a href="#cap4">
-        <img src="STUDY_BASIS.jpg">
-      </a>
-    </div>
-
-    <div id="cap4" class="lightbox">
-      <a href="#"><img src="STUDY_BASIS.jpg"></a>
-    </div>
-
-  </div>
-  
   <h2>Static Projects</h2>
 
-  <h3>U.S. Housing & Environmental Inequality</h3>
+  <!-- CAPSTONE BIG & CENTERED -->
+  <h2 class="capstone-title">Master’s Capstone: Illegal Gold Mining & Deforestation in the Brazilian Legal Amazon</h2>
+  <p class="section-description">
+    Spatial analysis of mining activity and deforestation across the Brazilian Legal Amazon.
+  </p>
 
+  <div class="capstone-images">
+    <a href="Study_Area.jpg" target="_blank"><img src="Study_Area.jpg" alt="Map of the Brazilian Legal Amazon" class="capstone-img"></a>
+    <a href="Indigenous_Territories.jpg" target="_blank"><img src="Indigenous_Territories.jpg" alt="Indigenous Territories & Mining" class="capstone-img"></a>
+    <a href="RORAIMA.png" target="_blank"><img src="RORAIMA.png" alt="Roraima DEM" class="capstone-img"></a>
+    <a href="STUDY_BASIS.jpg" target="_blank"><img src="STUDY_BASIS.jpg" alt="Deforestation & Mining" class="capstone-img"></a>
+  </div>
+  
+  <h3> Housing & Environmental Inequality</h3>
   <p class="section-description">
     Southeast Energy Efficiency Alliance (SEEA) Projects: 
-    Housing age, mobile homes & extreme heat, and tree canopy disparities across redlined communities.
+    Housing age, mobile homes & extreme heat, and tree canopy disparities in redlined geographies.
   </p>
 
   <div class="portfolio-grid">
-
     <div class="portfolio-item">
       <h4>Median Housing Age</h4>
-      <a href="#img1">
-        <img src="Median Housing Age U.S.A 2024 ACS.png">
-      </a>
+      <a href="#img1"><img src="Median Housing Age U.S.A 2024 ACS.png"></a>
     </div>
-
-    <div id="img1" class="lightbox">
-      <a href="#"><img src="Median Housing Age U.S.A 2024 ACS.png"></a>
-    </div>
+    <div id="img1" class="lightbox"><a href="#"><img src="Median Housing Age U.S.A 2024 ACS.png"></a></div>
 
     <div class="portfolio-item">
       <h4>Extreme Heat & Mobile Homes</h4>
-      <a href="#img2">
-        <img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png">
-      </a>
+      <a href="#img2"><img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png"></a>
     </div>
-
-    <div id="img2" class="lightbox">
-      <a href="#"><img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png"></a>
-    </div>
+    <div id="img2" class="lightbox"><a href="#"><img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png"></a></div>
 
     <div class="portfolio-item">
       <h4>Memphis Tree Canopy</h4>
-      <a href="#img3">
-        <img src="MEMPHIS_TN_TC_REDLINED.png">
-      </a>
+      <a href="#img3"><img src="MEMPHIS_TN_TC_REDLINED.png"></a>
     </div>
-
-    <div id="img3" class="lightbox">
-      <a href="#"><img src="MEMPHIS_TN_TC_REDLINED.png"></a>
-    </div>
-
+    <div id="img3" class="lightbox"><a href="#"><img src="MEMPHIS_TN_TC_REDLINED.png"></a></div>
   </div>
-
-  <!-- INTERACTIVE -->
+  <!-- INTERACTIVE PROJECTS -->
   <h2>Interactive Projects</h2>
-
   <div class="interactive-container">
-
     <div class="interactive-project">
       <h3>Mississippi Energy Burden</h3>
       <iframe src="https://datawrapper.dwcdn.net/lZFST/4/" height="450"></iframe>
-      <p class="project-description">
-        County-level disparities in energy burden across Mississippi.
-      </p>
+      <p class="project-description">County-level disparities in energy burden across Mississippi.</p>
     </div>
-
     <div class="interactive-project">
       <h3>LMI Energy Burden</h3>
       <iframe src="https://datawrapper.dwcdn.net/UjQCX/6/" height="450"></iframe>
-      <p class="project-description">
-        Energy burdens in Tribal Nations, especially high in Alaska.
-      </p>
+      <p class="project-description">Energy burdens in Tribal Nations, especially high in Alaska.</p>
     </div>
-
   </div>
 
   <!-- DATAWRAPPER SCRIPT -->
   <script>
     window.addEventListener("message", function(a){
-      if (a.data["datawrapper-height"] !== undefined) {
+      if (a.data["datawrapper-height"] !== undefined){
         var e = document.querySelectorAll("iframe");
         for (var t in a.data["datawrapper-height"])
           for (var r,i=0;r=e[i];i++)
-            if (r.contentWindow === a.source){
-              r.style.height = a.data["datawrapper-height"][t] + "px";
+            if (r.contentWindow===a.source){
+              r.style.height=a.data["datawrapper-height"][t]+"px";
             }
       }
     });
