@@ -10,8 +10,8 @@
       max-width: 1100px;
       margin: 20px auto;
       padding: 0 20px;
-      background-color: #121212;
-      color: #e0e0e0;
+      background-color: #ffffff;
+      color: #222;
     }
 
     h1, h2, h3 {
@@ -28,7 +28,7 @@
       margin: 10px auto 30px;
       text-align: center;
       font-size: 16px;
-      color: #bbb;
+      color: #444;
       line-height: 1.6;
     }
 
@@ -43,11 +43,11 @@
 
     /* CARD */
     .portfolio-item {
-      background: #1e1e1e;
+      background: #ffffff;
       border-radius: 12px;
       padding: 15px;
       max-width: 300px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       text-align: center;
     }
 
@@ -105,23 +105,23 @@
       width: 100%;
       border: none;
       border-radius: 8px;
+      background: #ffffff;
     }
 
     /* CV BUTTON */
     .cv-button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #C8A2C8; /* lilac */
+  color: #222;
+  text-decoration: none;
+  border-radius: 6px;
+}
 
-    .cv-button:hover {
-      background: #66bb6a;
-    }
-
+.cv-button:hover {
+  background: #B57EDC; /* slightly darker lilac */
+}
   </style>
 </head>
 
@@ -130,9 +130,7 @@
   <h1>GIS Portfolio</h1>
   <p style="text-align:center;">By Laura Diaz-Villaquiran</p>
 
-  <!-- ===================== -->
   <!-- ABOUT -->
-  <!-- ===================== -->
   <h2>About Me</h2>
 
   <div class="section-description">
@@ -140,22 +138,72 @@
       I am a GIS analyst focused on environmental justice, energy equity,
       and spatial data storytelling. My work combines geospatial analysis,
       data visualization, and policy-relevant research.
+
+      Soy analista SIG. Mi trabajo combina análisis geoespacial, 
+      visualización de datos e investigación relevante para políticas públicas.
     </p>
 
-    <a href="Laura_Diaz_Villaquiran_CV.pdf" download class="cv-button">
+    <a href="LMDV_CV_2026_06.pdf" download class="cv-button">
       Download CV
     </a>
   </div>
 
-  <!-- ===================== -->
   <!-- STATIC PROJECTS -->
-  <!-- ===================== -->
+    <!-- CAPSTONE -->
+    <h3>Master’s Capstone: Illegal Gold Mining & Deforestation in the Brazilian Legal Amazon</h3>
+    <div class="portfolio-item">
+      <h4>The Brazilian Legal Amazon</h4>
+      <a href="#cap1">
+        <img src="Study_Area.jpg">
+      </a>
+    </div>
+
+    <div id="cap1" class="lightbox">
+      <a href="#"><img src="Study_Area.jpg"></a>
+    </div>
+
+    <div class="portfolio-item">
+      <h4>Indigenous Territories & Mining</h4>
+      <a href="#cap2">
+        <img src="Indigenous_Territories.jpg">
+      </a>
+    </div>
+
+    <div id="cap2" class="lightbox">
+      <a href="#"><img src="Indigenous_Territories.jpg"></a>
+    </div>
+
+    <div class="portfolio-item">
+      <h4>Roraima DEM</h4>
+      <a href="#cap3">
+        <img src="RORAIMA.png">
+      </a>
+    </div>
+
+    <div id="cap3" class="lightbox">
+      <a href="#"><img src="RORAIMA.png"></a>
+    </div>
+
+    <div class="portfolio-item">
+      <h4>Deforestation & Mining</h4>
+      <a href="#cap4">
+        <img src="STUDY_BASIS.jpg">
+      </a>
+    </div>
+
+    <div id="cap4" class="lightbox">
+      <a href="#"><img src="STUDY_BASIS.jpg"></a>
+    </div>
+
+  </div>
+  
   <h2>Static Projects</h2>
 
   <h3>U.S. Housing & Environmental Inequality</h3>
 
   <p class="section-description">
-    Housing age, extreme heat exposure, and tree canopy disparities across redlined communities.
+    Southeast Energy Efficiency Alliance (SEEA) Projects: 
+    Housing age, mobile homes & extreme heat, and tree canopy disparities across redlined communities.
   </p>
 
   <div class="portfolio-grid">
@@ -195,36 +243,30 @@
 
   </div>
 
-  <!-- ===================== -->
-  <!-- INTERACTIVE PROJECTS -->
-  <!-- ===================== -->
+  <!-- INTERACTIVE -->
   <h2>Interactive Projects</h2>
 
   <div class="interactive-container">
 
     <div class="interactive-project">
-      <h3>LMI Energy Burden</h3>
-
-      <iframe src="https://datawrapper.dwcdn.net/UjQCX/6/" height="450"></iframe>
-
-      <p class="project-description">
-        Energy burdens in Tribal Nations, especially high in Alaska.
-      </p>
-    </div>
-
-    <div class="interactive-project">
       <h3>Mississippi Energy Burden</h3>
-
       <iframe src="https://datawrapper.dwcdn.net/lZFST/4/" height="450"></iframe>
-
       <p class="project-description">
         County-level disparities in energy burden across Mississippi.
       </p>
     </div>
 
+    <div class="interactive-project">
+      <h3>LMI Energy Burden</h3>
+      <iframe src="https://datawrapper.dwcdn.net/UjQCX/6/" height="450"></iframe>
+      <p class="project-description">
+        Energy burdens in Tribal Nations, especially high in Alaska.
+      </p>
+    </div>
+
   </div>
 
-  <!-- SCRIPT FOR DATAWRAPPER RESIZE -->
+  <!-- DATAWRAPPER SCRIPT -->
   <script>
     window.addEventListener("message", function(a){
       if (a.data["datawrapper-height"] !== undefined) {
