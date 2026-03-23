@@ -1,38 +1,59 @@
-<!-- CAPSTONE BIG & CENTERED -->
-<h2>Master’s Capstone: Illegal Mining and Deforestation in the Brazilian Legal Amazon</h2>
-<p class="section-description">
-  Spatial analysis of mining activity and deforestation across the Brazilian Legal Amazon.
-</p>
+/* Capstone Grid Layout */
+.capstone-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  gap: 20px;
+  justify-items: center;
+  margin-bottom: 50px;
+}
 
-<div class="capstone-images">
-  <!-- Small clickable thumbnails -->
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <a href="#cap1"><img src="Study_Area.jpg" alt="Map of the Brazilian Legal Amazon" class="capstone-img"></a>
-    </div>
-    <div id="cap1" class="lightbox">
-      <a href="#"><img src="Study_Area.jpg" alt="Map of the Brazilian Legal Amazon"></a>
-    </div>
+.capstone-img {
+  width: 100%;
+  max-width: 250px; /* small thumbnails */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
 
-    <div class="portfolio-item">
-      <a href="#cap2"><img src="Indigenous_Territories.jpg" alt="Indigenous Territories & Mining" class="capstone-img"></a>
-    </div>
-    <div id="cap2" class="lightbox">
-      <a href="#"><img src="Indigenous_Territories.jpg" alt="Indigenous Territories & Mining"></a>
-    </div>
+.capstone-img:hover {
+  transform: scale(1.05);
+}
 
-    <div class="portfolio-item">
-      <a href="#cap3"><img src="RORAIMA.png" alt="Roraima DEM" class="capstone-img"></a>
-    </div>
-    <div id="cap3" class="lightbox">
-      <a href="#"><img src="RORAIMA.png" alt="Roraima DEM"></a>
-    </div>
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
 
-    <div class="portfolio-item">
-      <a href="#cap4"><img src="STUDY_BASIS.jpg" alt="Deforestation & Mining" class="capstone-img"></a>
-    </div>
-    <div id="cap4" class="lightbox">
-      <a href="#"><img src="STUDY_BASIS.jpg" alt="Deforestation & Mining"></a>
-    </div>
-  </div>
-</div>
+.lightbox img {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.lightbox:target {
+  display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .capstone-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .capstone-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
