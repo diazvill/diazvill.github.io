@@ -7,68 +7,111 @@
   <title>Laura Diaz-Villaquiran GIS Portfolio</title>
 
   <style>
-    /* Body & Font */
+    /* ---------------- Body & Font ---------------- */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
     body {
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       max-width: 1100px;
       margin: 20px auto;
       padding: 0 20px;
-      background-color: #ffffff;
+      background-color: #fafafa;
       color: #222;
+      line-height: 1.65;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3,
+    h4 {
       text-align: center;
+      margin-bottom: 15px;
+      color: #333;
     }
 
     h2 {
       margin-top: 60px;
     }
 
-    /* Section & Project Text */
-    .section-description, .project-description {
-      max-width: 750px;
-      margin: 10px auto 30px;
-      text-align: center;
+    p {
       font-size: 16px;
       color: #444;
-      line-height: 1.6;
     }
 
-    /* Portfolio Grid */
+    /* ---------------- CV Button ---------------- */
+    .cv-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      background: #C8A2C8;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .cv-button:hover {
+      background: #B57EDC;
+      transform: translateY(-2px);
+    }
+
+    /* ---------------- Section Descriptions ---------------- */
+    .section-description,
+    .project-description {
+      max-width: 750px;
+      margin: 20px auto 40px;
+      text-align: center;
+      font-size: 17px;
+      color: #333;
+      line-height: 1.7;
+      letter-spacing: 0.5px;
+    }
+
+    /* ---------------- Portfolio Grid ---------------- */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
       justify-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
-    /* Portfolio Cards */
     .portfolio-item {
       background: #ffffff;
       border-radius: 12px;
       padding: 15px;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-3px);
     }
 
     .portfolio-item img {
       width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
       border-radius: 8px;
       margin-top: 10px;
-      transition: transform 0.3s;
       cursor: pointer;
+      transition: transform 0.3s;
     }
 
     .portfolio-item img:hover {
       transform: scale(1.05);
     }
 
-    /* Capstone Grid Layout */
+    /* ---------------- Capstone Grid ---------------- */
     .capstone-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       justify-items: center;
       margin-bottom: 50px;
@@ -76,10 +119,10 @@
 
     .capstone-img {
       width: 100%;
-      max-width: 250px;
+      max-width: 300px;
       height: auto;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       cursor: pointer;
       transition: transform 0.3s;
     }
@@ -88,7 +131,7 @@
       transform: scale(1.05);
     }
 
-    /* Lightbox */
+    /* ---------------- Lightbox ---------------- */
     .lightbox {
       display: none;
       position: fixed;
@@ -98,7 +141,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.9);
+      background-color: rgba(0, 0, 0, 0.9);
     }
 
     .lightbox img {
@@ -106,13 +149,14 @@
       display: block;
       max-width: 90%;
       max-height: 80%;
+      border-radius: 8px;
     }
 
     .lightbox:target {
       display: block;
     }
 
-    /* Interactive Projects */
+    /* ---------------- Interactive Projects ---------------- */
     .interactive-container {
       display: flex;
       flex-wrap: wrap;
@@ -123,7 +167,18 @@
     .interactive-project {
       flex: 1 1 450px;
       max-width: 500px;
-      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: left;
+    }
+
+    .interactive-project p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      margin-top: 10px;
     }
 
     iframe {
@@ -133,22 +188,7 @@
       background: #ffffff;
     }
 
-    /* CV Button Lilac */
-    .cv-button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #C8A2C8;
-      color: #222;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-
-    .cv-button:hover {
-      background: #B57EDC;
-    }
-
-    /* Responsive Adjustments */
+    /* ---------------- Responsive Adjustments ---------------- */
     @media (max-width: 1024px) {
       .capstone-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -164,14 +204,24 @@
         flex: 1 1 100%;
         max-width: 100%;
       }
+
+      .cv-button {
+        position: static;
+        display: block;
+        margin: 15px auto;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- CV Button -->
+  <a href="LMDV_CV_2026_06.pdf" download class="cv-button">Download CV</a>
+
   <h1>GIS Portfolio</h1>
   <h3>By Laura Diaz-Villaquiran</h3>
+
   <div class="section-description">
     <p>
       I am a GIS analyst focused on environmental justice, energy equity, and spatial data storytelling.
@@ -180,14 +230,11 @@
       Soy analista SIG. Mi trabajo combina análisis geoespacial, 
       visualización de datos e investigación relevante para políticas públicas.
     </p>
-    <a href="LMDV_CV_2026_06.pdf" download class="cv-button">
-      Download CV
-    </a>
   </div>
-  
+
   <!-- CAPSTONE BIG & CENTERED -->
   <h2>Master’s Capstone: Illegal Mining and Deforestation in the Brazilian Legal Amazon</h2>
-  
+
   <div class="capstone-grid">
     <div class="portfolio-item">
       <a href="#cap4"><img src="STUDY_BASIS.jpg" alt="Deforestation & Mining" class="capstone-img"></a>
@@ -195,8 +242,7 @@
     <div id="cap4" class="lightbox">
       <a href="#"><img src="STUDY_BASIS.jpg" alt="Deforestation & Mining"></a>
     </div>
-    
-  </div>
+
     <div class="portfolio-item">
       <a href="#cap1"><img src="Study_Area.jpg" alt="Map of the Brazilian Legal Amazon" class="capstone-img"></a>
     </div>
@@ -217,6 +263,8 @@
     <div id="cap3" class="lightbox">
       <a href="#"><img src="RORAIMA.png" alt="Roraima DEM"></a>
     </div>
+  </div>
+
   <!-- Housing & Environmental Inequality -->
   <h3>Housing & Environmental Inequality</h3>
   <p class="section-description">
@@ -249,7 +297,8 @@
   <div class="interactive-container">
     <div class="interactive-project">
       <iframe src="https://datawrapper.dwcdn.net/lZFST/4/" height="450"></iframe>
-      <p class="project-description">Mississippi’s households experience the highest rate of energy insecurity in the entire country, 
+      <p class="project-description">
+        Mississippi’s households experience the highest rate of energy insecurity in the entire country, 
         with 4 out of every 10 households struggling to pay their energy bills. Census tracts with high and severe average household energy burdens 
         are mostly concentrated in the Mississippi Delta region, bordering the Mississippi River to the west and the Yazoo River to the east, 
         and the state’s rural communities. 
@@ -257,9 +306,11 @@
     </div>
     <div class="interactive-project">
       <iframe src="https://datawrapper.dwcdn.net/UjQCX/6/" height="450"></iframe>
-      <p class="project-description">Energy burdens faced by low- to moderate income (LMI) American Indian, Alaska Native, and Native Hawaiian households. 
+      <p class="project-description">
+        Energy burdens faced by low- to moderate income (LMI) American Indian, Alaska Native, and Native Hawaiian households. 
         The highest burdens are concentrated in Alaska due to high energy consumption, reliance on diesel generators, and limited grid connectivity. 
-        Many rural communities face high utility costs, reflecting broader patterns shaped by colonization, displacement, and systemic inequality.</p>
+        Many rural communities face high utility costs, reflecting broader patterns shaped by colonization, displacement, and systemic inequality.
+      </p>
     </div>
   </div>
 
