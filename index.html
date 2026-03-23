@@ -7,41 +7,28 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 20px auto;
       padding: 0 20px;
+      background-color: #121212;
+      color: #e0e0e0;
     }
 
     h1, h2, h3 {
       text-align: center;
     }
 
-    /* INTERACTIVE PROJECTS */
-    .interactive-project {
-      margin: 50px 0;
-      text-align: center;
+    h2 {
+      margin-top: 60px;
     }
 
-    .project-description {
-      max-width: 700px;
-      margin: 15px auto;
-      font-size: 16px;
-      color: #444;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    iframe {
-      border-radius: 8px;
-    }
-
-    /* SECTION TEXT */
-    .section-description {
+    /* TEXT */
+    .section-description, .project-description {
       max-width: 750px;
       margin: 10px auto 30px;
       text-align: center;
       font-size: 16px;
-      color: #444;
+      color: #bbb;
       line-height: 1.6;
     }
 
@@ -54,35 +41,85 @@
       margin-bottom: 40px;
     }
 
-    /* CARD STYLE */
+    /* CARD */
     .portfolio-item {
-      background: #fff;
+      background: #1e1e1e;
       border-radius: 12px;
       padding: 15px;
-      max-width: 260px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
+      max-width: 300px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       text-align: center;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
 
     .portfolio-item img {
       width: 100%;
       border-radius: 8px;
       margin-top: 10px;
+      transition: transform 0.3s;
+      cursor: pointer;
     }
 
-    .portfolio-item h4 {
-      margin: 10px 0 5px;
+    .portfolio-item img:hover {
+      transform: scale(1.05);
     }
 
-    .portfolio-item p {
-      font-size: 14px;
-      color: #555;
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .lightbox img {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .lightbox:target {
+      display: block;
+    }
+
+    /* INTERACTIVE SIDE-BY-SIDE */
+    .interactive-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .interactive-project {
+      flex: 1 1 450px;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+
+    /* CV BUTTON */
+    .cv-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .cv-button:hover {
+      background: #66bb6a;
     }
 
   </style>
@@ -91,57 +128,103 @@
 <body>
 
   <h1>GIS Portfolio</h1>
-
-  <!-- EDIT NAME IF NEEDED -->
   <p style="text-align:center;">By Laura Diaz-Villaquiran</p>
+
+  <!-- ===================== -->
+  <!-- ABOUT -->
+  <!-- ===================== -->
+  <h2>About Me</h2>
+
+  <div class="section-description">
+    <p>
+      I am a GIS analyst focused on environmental justice, energy equity,
+      and spatial data storytelling. My work combines geospatial analysis,
+      data visualization, and policy-relevant research.
+    </p>
+
+    <a href="Laura_Diaz_Villaquiran_CV.pdf" download class="cv-button">
+      Download CV
+    </a>
+  </div>
+
+  <!-- ===================== -->
+  <!-- STATIC PROJECTS -->
+  <!-- ===================== -->
+  <h2>Static Projects</h2>
+
+  <h3>U.S. Housing & Environmental Inequality</h3>
+
+  <p class="section-description">
+    Housing age, extreme heat exposure, and tree canopy disparities across redlined communities.
+  </p>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-item">
+      <h4>Median Housing Age</h4>
+      <a href="#img1">
+        <img src="Median Housing Age U.S.A 2024 ACS.png">
+      </a>
+    </div>
+
+    <div id="img1" class="lightbox">
+      <a href="#"><img src="Median Housing Age U.S.A 2024 ACS.png"></a>
+    </div>
+
+    <div class="portfolio-item">
+      <h4>Extreme Heat & Mobile Homes</h4>
+      <a href="#img2">
+        <img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png">
+      </a>
+    </div>
+
+    <div id="img2" class="lightbox">
+      <a href="#"><img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png"></a>
+    </div>
+
+    <div class="portfolio-item">
+      <h4>Memphis Tree Canopy</h4>
+      <a href="#img3">
+        <img src="MEMPHIS_TN_TC_REDLINED.png">
+      </a>
+    </div>
+
+    <div id="img3" class="lightbox">
+      <a href="#"><img src="MEMPHIS_TN_TC_REDLINED.png"></a>
+    </div>
+
+  </div>
 
   <!-- ===================== -->
   <!-- INTERACTIVE PROJECTS -->
   <!-- ===================== -->
   <h2>Interactive Projects</h2>
 
-  <!-- PROJECT 1 -->
-  <div class="interactive-project">
+  <div class="interactive-container">
 
-    <h3>LMI Energy Burden in Tribal Nations</h3>
+    <div class="interactive-project">
+      <h3>LMI Energy Burden</h3>
 
-    <iframe 
-      src="https://datawrapper.dwcdn.net/UjQCX/6/" 
-      style="width: 100%; border: none;" 
-      height="482">
-    </iframe>
+      <iframe src="https://datawrapper.dwcdn.net/UjQCX/6/" height="450"></iframe>
 
-    <!-- EDIT DESCRIPTION -->
-    <p class="project-description">
-      Energy burdens faced by low- and moderate income (LMI) American Indian,
-      Alaska Native, and Native Hawaiian households. The highest burdens are
-      concentrated in Alaska due to high energy consumption, reliance on diesel
-      generators, and limited grid connectivity.
-    </p>
+      <p class="project-description">
+        Energy burdens in Tribal Nations, especially high in Alaska.
+      </p>
+    </div>
 
-  </div>
+    <div class="interactive-project">
+      <h3>Mississippi Energy Burden</h3>
 
-  <!-- PROJECT 2 -->
-  <div class="interactive-project">
+      <iframe src="https://datawrapper.dwcdn.net/lZFST/4/" height="450"></iframe>
 
-    <h3>Energy Burden in Mississippi</h3>
-
-    <iframe 
-      src="https://datawrapper.dwcdn.net/lZFST/4/" 
-      style="width: 100%; border: none;" 
-      height="563">
-    </iframe>
-
-    <!-- EDIT DESCRIPTION -->
-    <p class="project-description">
-      This choropleth map shows county-level energy burden in Mississippi,
-      highlighting areas where households spend a higher share of income on energy.
-      It reveals regional disparities and identifies vulnerable communities.
-    </p>
+      <p class="project-description">
+        County-level disparities in energy burden across Mississippi.
+      </p>
+    </div>
 
   </div>
 
-  <!-- ONE SCRIPT FOR ALL IFRAMES -->
+  <!-- SCRIPT FOR DATAWRAPPER RESIZE -->
   <script>
     window.addEventListener("message", function(a){
       if (a.data["datawrapper-height"] !== undefined) {
@@ -155,74 +238,5 @@
     });
   </script>
 
-  <!-- ===================== -->
-  <!-- STATIC PROJECTS -->
-  <!-- ===================== -->
-  <h2>Static Projects</h2>
-
-  <!-- SECTION 1 -->
-  <h3>U.S. Housing & Environmental Inequality</h3>
-
-  <p class="section-description">
-    This group of maps examines housing age, vulnerability to extreme heat,
-    and disparities in tree canopy coverage across historically redlined
-    communities in the United States.
-  </p>
-
-  <div class="portfolio-grid">
-
-    <div class="portfolio-item">
-      <h4>Median Housing Age (2024 ACS)</h4>
-      <p>Shows regional patterns in housing age across the U.S.</p>
-      <img src="Median Housing Age U.S.A 2024 ACS.png">
-    </div>
-
-    <div class="portfolio-item">
-      <h4>Extreme Heat & Mobile Homes</h4>
-      <p>Highlights where mobile homes face higher exposure to extreme heat.</p>
-      <img src="UPDATED_INCREASED_HEAT_MOBILE_HOMES.png">
-    </div>
-
-    <div class="portfolio-item">
-      <h4>Memphis Tree Canopy & Redlining</h4>
-      <p>Reveals disparities in tree canopy across historically redlined areas.</p>
-      <img src="MEMPHIS_TN_TC_REDLINED.png">
-    </div>
-
-  </div>
-
-  <!-- SECTION 2 -->
-  <h3>Master’s Capstone: Mining & Deforestation in the Brazilian Legal Amazon</h3>
-
-  <p class="section-description">
-    This project analyzes spatial relationships between mining activity and
-    deforestation using longitudinal PRODES raster data (2008–2022).
-  </p>
-
-  <div class="portfolio-grid">
-
-    <div class="portfolio-item">
-      <h4>Brazilian Legal Amazon</h4>
-      <img src="Study_Area.jpg">
-    </div>
-
-    <div class="portfolio-item">
-      <h4>Indigenous Territories & Mining</h4>
-      <img src="Indigenous_Territories.jpg">
-    </div>
-
-    <div class="portfolio-item">
-      <h4>Roraima Digital Elevation Model</h4>
-      <img src="RORAIMA.png">
-    </div>
-
-    <div class="portfolio-item">
-      <h4>Deforestation, Roads & Mining</h4>
-      <img src="STUDY_BASIS.jpg">
-    </div>
-
-  </div>
-
 </body>
-
 </html>
